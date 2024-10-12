@@ -1,0 +1,308 @@
+# pigpio command numbers
+
+class commandCode:
+    _PI_CMD_MODES= 0
+    _PI_CMD_MODEG= 1
+    _PI_CMD_PUD=   2
+    _PI_CMD_READ=  3
+    _PI_CMD_WRITE= 4
+    _PI_CMD_PWM=   5
+    _PI_CMD_PRS=   6
+    _PI_CMD_PFS=   7
+    _PI_CMD_SERVO= 8
+    _PI_CMD_WDOG=  9
+    _PI_CMD_BR1=  10
+    _PI_CMD_BR2=  11
+    _PI_CMD_BC1=  12
+    _PI_CMD_BC2=  13
+    _PI_CMD_BS1=  14
+    _PI_CMD_BS2=  15
+    _PI_CMD_TICK= 16
+    _PI_CMD_HWVER=17
+
+    _PI_CMD_NO=   18
+    _PI_CMD_NB=   19
+    _PI_CMD_NP=   20
+    _PI_CMD_NC=   21
+
+    _PI_CMD_PRG=  22
+    _PI_CMD_PFG=  23
+    _PI_CMD_PRRG= 24
+    _PI_CMD_HELP= 25
+    _PI_CMD_PIGPV=26
+
+    _PI_CMD_WVCLR=27
+    _PI_CMD_WVAG= 28
+    _PI_CMD_WVAS= 29
+    _PI_CMD_WVGO= 30
+    _PI_CMD_WVGOR=31
+    _PI_CMD_WVBSY=32
+    _PI_CMD_WVHLT=33
+    _PI_CMD_WVSM= 34
+    _PI_CMD_WVSP= 35
+    _PI_CMD_WVSC= 36
+
+    _PI_CMD_TRIG= 37
+
+    _PI_CMD_PROC= 38
+    _PI_CMD_PROCD=39
+    _PI_CMD_PROCR=40
+    _PI_CMD_PROCS=41
+
+    _PI_CMD_SLRO= 42
+    _PI_CMD_SLR=  43
+    _PI_CMD_SLRC= 44
+
+    _PI_CMD_PROCP=45
+    _PI_CMD_MICRO=46
+    _PI_CMD_MILLI=47
+    _PI_CMD_PARSE=48
+
+    _PI_CMD_WVCRE=49
+    _PI_CMD_WVDEL=50
+    _PI_CMD_WVTX =51
+    _PI_CMD_WVTXR=52
+    _PI_CMD_WVNEW=53
+
+    _PI_CMD_I2CO =54
+    _PI_CMD_I2CC =55
+    _PI_CMD_I2CRD=56
+    _PI_CMD_I2CWD=57
+    _PI_CMD_I2CWQ=58
+    _PI_CMD_I2CRS=59
+    _PI_CMD_I2CWS=60
+    _PI_CMD_I2CRB=61
+    _PI_CMD_I2CWB=62
+    _PI_CMD_I2CRW=63
+    _PI_CMD_I2CWW=64
+    _PI_CMD_I2CRK=65
+    _PI_CMD_I2CWK=66
+    _PI_CMD_I2CRI=67
+    _PI_CMD_I2CWI=68
+    _PI_CMD_I2CPC=69
+    _PI_CMD_I2CPK=70
+
+    _PI_CMD_SPIO =71
+    _PI_CMD_SPIC =72
+    _PI_CMD_SPIR =73
+    _PI_CMD_SPIW =74
+    _PI_CMD_SPIX =75
+
+    _PI_CMD_SERO =76
+    _PI_CMD_SERC =77
+    _PI_CMD_SERRB=78
+    _PI_CMD_SERWB=79
+    _PI_CMD_SERR =80
+    _PI_CMD_SERW =81
+    _PI_CMD_SERDA=82
+
+    _PI_CMD_GDC  =83
+    _PI_CMD_GPW  =84
+
+    _PI_CMD_HC   =85
+    _PI_CMD_HP   =86
+
+    _PI_CMD_CF1  =87
+    _PI_CMD_CF2  =88
+
+    _PI_CMD_NOIB =99
+
+    _PI_CMD_BI2CC=89
+    _PI_CMD_BI2CO=90
+    _PI_CMD_BI2CZ=91
+
+    _PI_CMD_I2CZ =92
+
+    _PI_CMD_WVCHA=93
+
+    _PI_CMD_SLRI =94
+
+    _PI_CMD_CGI  =95
+    _PI_CMD_CSI  =96
+
+    _PI_CMD_FG   =97
+    _PI_CMD_FN   =98
+
+    _PI_CMD_WVTXM=100
+    _PI_CMD_WVTAT=101
+
+    _PI_CMD_PADS =102
+    _PI_CMD_PADG =103
+
+    _PI_CMD_FO   =104
+    _PI_CMD_FC   =105
+    _PI_CMD_FR   =106
+    _PI_CMD_FW   =107
+    _PI_CMD_FS   =108
+    _PI_CMD_FL   =109
+    _PI_CMD_SHELL=110
+
+    _PI_CMD_BSPIC=111
+    _PI_CMD_BSPIO=112
+    _PI_CMD_BSPIX=113
+
+    _PI_CMD_BSCX =114
+
+    _PI_CMD_EVM  =115
+    _PI_CMD_EVT  =116
+
+    _PI_CMD_PROCU=117
+    _PI_CMD_WVCAP=118
+
+# pigpio error numbers
+class errorCode:
+    _PI_INIT_FAILED     =-1
+    PI_BAD_USER_GPIO    =-2
+    PI_BAD_GPIO         =-3
+    PI_BAD_MODE         =-4
+    PI_BAD_LEVEL        =-5
+    PI_BAD_PUD          =-6
+    PI_BAD_PULSEWIDTH   =-7
+    PI_BAD_DUTYCYCLE    =-8
+    _PI_BAD_TIMER       =-9
+    _PI_BAD_MS          =-10
+    _PI_BAD_TIMETYPE    =-11
+    _PI_BAD_SECONDS     =-12
+    _PI_BAD_MICROS      =-13
+    _PI_TIMER_FAILED    =-14
+    PI_BAD_WDOG_TIMEOUT =-15
+    _PI_NO_ALERT_FUNC   =-16
+    _PI_BAD_CLK_PERIPH  =-17
+    _PI_BAD_CLK_SOURCE  =-18
+    _PI_BAD_CLK_MICROS  =-19
+    _PI_BAD_BUF_MILLIS  =-20
+    PI_BAD_DUTYRANGE    =-21
+    _PI_BAD_SIGNUM      =-22
+    _PI_BAD_PATHNAME    =-23
+    PI_NO_HANDLE        =-24
+    PI_BAD_HANDLE       =-25
+    _PI_BAD_IF_FLAGS    =-26
+    _PI_BAD_CHANNEL     =-27
+    _PI_BAD_PRIM_CHANNEL=-27
+    _PI_BAD_SOCKET_PORT =-28
+    _PI_BAD_FIFO_COMMAND=-29
+    _PI_BAD_SECO_CHANNEL=-30
+    _PI_NOT_INITIALISED =-31
+    _PI_INITIALISED     =-32
+    _PI_BAD_WAVE_MODE   =-33
+    _PI_BAD_CFG_INTERNAL=-34
+    PI_BAD_WAVE_BAUD    =-35
+    PI_TOO_MANY_PULSES  =-36
+    PI_TOO_MANY_CHARS   =-37
+    PI_NOT_SERIAL_GPIO  =-38
+    _PI_BAD_SERIAL_STRUC=-39
+    _PI_BAD_SERIAL_BUF  =-40
+    PI_NOT_PERMITTED    =-41
+    PI_SOME_PERMITTED   =-42
+    PI_BAD_WVSC_COMMND  =-43
+    PI_BAD_WVSM_COMMND  =-44
+    PI_BAD_WVSP_COMMND  =-45
+    PI_BAD_PULSELEN     =-46
+    PI_BAD_SCRIPT       =-47
+    PI_BAD_SCRIPT_ID    =-48
+    PI_BAD_SER_OFFSET   =-49
+    PI_GPIO_IN_USE      =-50
+    PI_BAD_SERIAL_COUNT =-51
+    PI_BAD_PARAM_NUM    =-52
+    PI_DUP_TAG          =-53
+    PI_TOO_MANY_TAGS    =-54
+    PI_BAD_SCRIPT_CMD   =-55
+    PI_BAD_VAR_NUM      =-56
+    PI_NO_SCRIPT_ROOM   =-57
+    PI_NO_MEMORY        =-58
+    PI_SOCK_READ_FAILED =-59
+    PI_SOCK_WRIT_FAILED =-60
+    PI_TOO_MANY_PARAM   =-61
+    PI_SCRIPT_NOT_READY =-62
+    PI_BAD_TAG          =-63
+    PI_BAD_MICS_DELAY   =-64
+    PI_BAD_MILS_DELAY   =-65
+    PI_BAD_WAVE_ID      =-66
+    PI_TOO_MANY_CBS     =-67
+    PI_TOO_MANY_OOL     =-68
+    PI_EMPTY_WAVEFORM   =-69
+    PI_NO_WAVEFORM_ID   =-70
+    PI_I2C_OPEN_FAILED  =-71
+    PI_SER_OPEN_FAILED  =-72
+    PI_SPI_OPEN_FAILED  =-73
+    PI_BAD_I2C_BUS      =-74
+    PI_BAD_I2C_ADDR     =-75
+    PI_BAD_SPI_CHANNEL  =-76
+    PI_BAD_FLAGS        =-77
+    PI_BAD_SPI_SPEED    =-78
+    PI_BAD_SER_DEVICE   =-79
+    PI_BAD_SER_SPEED    =-80
+    PI_BAD_PARAM        =-81
+    PI_I2C_WRITE_FAILED =-82
+    PI_I2C_READ_FAILED  =-83
+    PI_BAD_SPI_COUNT    =-84
+    PI_SER_WRITE_FAILED =-85
+    PI_SER_READ_FAILED  =-86
+    PI_SER_READ_NO_DATA =-87
+    PI_UNKNOWN_COMMAND  =-88
+    PI_SPI_XFER_FAILED  =-89
+    _PI_BAD_POINTER     =-90
+    PI_NO_AUX_SPI       =-91
+    PI_NOT_PWM_GPIO     =-92
+    PI_NOT_SERVO_GPIO   =-93
+    PI_NOT_HCLK_GPIO    =-94
+    PI_NOT_HPWM_GPIO    =-95
+    PI_BAD_HPWM_FREQ    =-96
+    PI_BAD_HPWM_DUTY    =-97
+    PI_BAD_HCLK_FREQ    =-98
+    PI_BAD_HCLK_PASS    =-99
+    PI_HPWM_ILLEGAL     =-100
+    PI_BAD_DATABITS     =-101
+    PI_BAD_STOPBITS     =-102
+    PI_MSG_TOOBIG       =-103
+    PI_BAD_MALLOC_MODE  =-104
+    _PI_TOO_MANY_SEGS   =-105
+    _PI_BAD_I2C_SEG     =-106
+    PI_BAD_SMBUS_CMD    =-107
+    PI_NOT_I2C_GPIO     =-108
+    PI_BAD_I2C_WLEN     =-109
+    PI_BAD_I2C_RLEN     =-110
+    PI_BAD_I2C_CMD      =-111
+    PI_BAD_I2C_BAUD     =-112
+    PI_CHAIN_LOOP_CNT   =-113
+    PI_BAD_CHAIN_LOOP   =-114
+    PI_CHAIN_COUNTER    =-115
+    PI_BAD_CHAIN_CMD    =-116
+    PI_BAD_CHAIN_DELAY  =-117
+    PI_CHAIN_NESTING    =-118
+    PI_CHAIN_TOO_BIG    =-119
+    PI_DEPRECATED       =-120
+    PI_BAD_SER_INVERT   =-121
+    _PI_BAD_EDGE        =-122
+    _PI_BAD_ISR_INIT    =-123
+    PI_BAD_FOREVER      =-124
+    PI_BAD_FILTER       =-125
+    PI_BAD_PAD          =-126
+    PI_BAD_STRENGTH     =-127
+    PI_FIL_OPEN_FAILED  =-128
+    PI_BAD_FILE_MODE    =-129
+    PI_BAD_FILE_FLAG    =-130
+    PI_BAD_FILE_READ    =-131
+    PI_BAD_FILE_WRITE   =-132
+    PI_FILE_NOT_ROPEN   =-133
+    PI_FILE_NOT_WOPEN   =-134
+    PI_BAD_FILE_SEEK    =-135
+    PI_NO_FILE_MATCH    =-136
+    PI_NO_FILE_ACCESS   =-137
+    PI_FILE_IS_A_DIR    =-138
+    PI_BAD_SHELL_STATUS =-139
+    PI_BAD_SCRIPT_NAME  =-140
+    PI_BAD_SPI_BAUD     =-141
+    PI_NOT_SPI_GPIO     =-142
+    PI_BAD_EVENT_ID     =-143
+    PI_CMD_INTERRUPTED  =-144
+    PI_NOT_ON_BCM2711   =-145
+    PI_ONLY_ON_BCM2711  =-146
+
+class mode:
+    INPUT = 0
+    OUTPUT = 1
+
+class level:
+    HIGH = 1
+    LOW = 0
