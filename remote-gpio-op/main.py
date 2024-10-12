@@ -69,7 +69,7 @@ async def manage_connections():
     while True:
         if(len(active_connections)>MAX_CONNECTION):
             oldest = active_connections[0]
-            print(f'Removing oldest connection instance {oldest.get_extra_info('peername')}')
+            #print(f'Removing oldest connection instance {oldest.get_extra_info('peername')}')
 
             oldest.close()
             await oldest.wait_closed()
@@ -78,6 +78,10 @@ async def manage_connections():
         await asyncio.sleep(1)
 
 async def run_server(host='127.0.0.1',port=8888):
+    if init()==0:
+        print('Cannot start wiringpi initialization')
+        return
+    
     # Bind to localhost on port 8888
     server = await asyncio.start_server(client_handler, host, port)
     
@@ -91,4 +95,4 @@ async def run_server(host='127.0.0.1',port=8888):
         await server.serve_forever()
 
 if __name__ == '__main__':
-    asyncio.run(run_server())
+    asyncio.run(run_server('0.0.0.0',8888))
