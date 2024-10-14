@@ -2,8 +2,9 @@ import asyncio
 import struct
 from constants import *
 from commands import *
+import argparse
 
-MAX_CONNECTION = 10
+MAX_CONNECTION = 100
 active_connections = []
 
 async def client_handler(reader,writer):
@@ -16,12 +17,16 @@ async def client_handler(reader,writer):
     connected=True
     
     while connected:
-        # read from client
+        # read from client     
         msg = await reader.read(16)
-        if len(msg) == 16 :
-            (command,p1,p2,p3) = struct.unpack('IIII',msg)
-        else:
-            command = commandCode._PI_CMD_NC
+        
+        (command,p1,p2,p3) = struct.unpack('IIII',msg)
+        
+        print(command,p1,p2,p3)
+        #if p3 != 0:
+        #    msg = await reader.read(p3)
+        #    print(p3,msg)
+            
 
         match command:
             case commandCode._PI_CMD_BR1: #blank read
@@ -77,7 +82,17 @@ async def manage_connections():
 
         await asyncio.sleep(1)
 
-async def run_server(host='127.0.0.1',port=8888):
+async def main():
+    parser = argparse.ArgumentParser(description="--host host --port port")
+    
+    parser.add_argument('--host',help='Host',default='127.0.0.1')
+    parser.add_argument('--port',help='Port',default=8888)
+    args = parser.parse_args()
+    host = args.host
+    port = args.port
+    
+    print(host,port)
+    
     if init()==0:
         print('Cannot start wiringpi initialization')
         return
@@ -95,4 +110,4 @@ async def run_server(host='127.0.0.1',port=8888):
         await server.serve_forever()
 
 if __name__ == '__main__':
-    asyncio.run(run_server('0.0.0.0',8888))
+    asyncio.run(main())
